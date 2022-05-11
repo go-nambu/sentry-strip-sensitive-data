@@ -8,7 +8,8 @@ def generate_strip_sensitive_data(strip_key_list: List[str]):
 
     Parameters
     ----------
-    strip_key_list: List[str]
+    strip_key_list : List[str]
+        list of keys to strip
 
     Returns
     ----------
