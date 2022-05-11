@@ -1,0 +1,3 @@
+dist/
+sentry_strip_sensitive_data.egg-info/
+**/__pycache__/
