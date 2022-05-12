@@ -78,8 +78,19 @@
 <span id="sentry-strip-sensitive-data-before-send-func-generator-module"></span><h2>sentry_strip_sensitive_data.before_send_func_generator module<a class="headerlink" href="#module-sentry_strip_sensitive_data.before_send_func_generator" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="sentry_strip_sensitive_data.before_send_func_generator.generate_strip_sensitive_data">
-<span class="sig-prename descclassname"><span class="pre">sentry_strip_sensitive_data.before_send_func_generator.</span></span><span class="sig-name descname"><span class="pre">generate_strip_sensitive_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strip_key_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sentry_strip_sensitive_data.before_send_func_generator.generate_strip_sensitive_data" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">sentry_strip_sensitive_data.before_send_func_generator.</span></span><span class="sig-name descname"><span class="pre">generate_strip_sensitive_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strip_key_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#sentry_strip_sensitive_data.before_send_func_generator.generate_strip_sensitive_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a function to filter sensitive data.
+Set the return value of this function to before_send of sentry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>strip_key_list</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – list of keys to strip</p>
+</dd>
+</dl>
+<p>Returns:
+Callable[[Any, Any], Any]: The first argument of the return function is sentry’s event,
+and the second is sentry’s hint.
+Also, the return value is the event of sentry after processing.</p>
+</dd></dl>
 
 </section>
 <section id="module-sentry_strip_sensitive_data">
