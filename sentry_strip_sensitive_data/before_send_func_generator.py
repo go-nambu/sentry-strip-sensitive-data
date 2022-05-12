@@ -1,20 +1,20 @@
-from typing import List
+from typing import Any, Callable, List
 
 
-def generate_strip_sensitive_data(strip_key_list: List[str]):
+def generate_strip_sensitive_data(strip_key_list: List[str]) -> Callable[[Any, Any], Any]:
     """
     Generate a function to filter sensitive data.
     Set the return value of this function to before_send of sentry.
 
-    Parameters
-    ----------
-    strip_key_list : List[str]
-        list of keys to strip
+    Args:
+        strip_key_list (List[str]): list of keys to strip
 
-    Returns
-    ----------
-    function
+    Returns:
+    Callable[[Any, Any], Any]: The first argument of the return function is sentry's event,
+    and the second is sentry's hint.
+    Also, the return value is the event of sentry after processing.
     """
+
     def strip_sensitive_data(event, hint):
         for v in event["exception"]["values"]:
             for s in v["stacktrace"]["frames"]:
