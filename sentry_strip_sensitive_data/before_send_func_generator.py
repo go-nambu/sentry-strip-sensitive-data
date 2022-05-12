@@ -10,9 +10,9 @@ def generate_strip_sensitive_data(strip_key_list: List[str]) -> Callable[[Any, A
         strip_key_list (List[str]): list of keys to strip
 
     Returns:
-    Callable[[Any, Any], Any]: The first argument of the return function is sentry's event,
-    and the second is sentry's hint.
-    Also, the return value is the event of sentry after processing.
+        Callable[[Any, Any], Any]: The first argument of the return function is sentry's event,
+        and the second is sentry's hint.
+        Also, the return value is the event of sentry after processing.
     """
 
     def strip_sensitive_data(event, hint):

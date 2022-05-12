@@ -85,11 +85,15 @@ Set the return value of this function to before_send of sentry.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>strip_key_list</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – list of keys to strip</p>
 </dd>
-</dl>
-<p>Returns:
-Callable[[Any, Any], Any]: The first argument of the return function is sentry’s event,
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The first argument of the return function is sentry’s event,
 and the second is sentry’s hint.
 Also, the return value is the event of sentry after processing.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Callable[[Any, Any], Any]</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
